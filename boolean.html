@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="Bool1">
+        <option value="True">Verdadeiro</option>
+        <option value="False">Falso</option>
+    </select>
+    <select id="Bool2">
+        <option value="True">Verdadeiro</option>
+        <option value="False">Falso</option>
+    </select>
+    <button type="submit" onclick="Verificar()">Verificar</button>
+    <p id="Resulatdo"></p>
+    <table>
+        <tr>
+            <th>Valores</th>
+            <th>Resulatdo</th>
+        </tr>
+        <tr>
+            <td>+ +</td>
+            <td>Verdadeiro</td>
+        </tr>
+        <tr>
+            <td>- -</td>
+            <td>Verdadeiro</td>
+        </tr>
+        <tr>
+            <td>+ -</td>
+            <td>Negativo</td>
+        </tr>
+        <tr>
+            <td>- +</td>
+            <td>Negativo</td>
+        </tr>
+    </table>
+
+    <script>
+        function Verificar() {
+            const Bool1 = document.getElementById('Bool1').value
+            let valor1 = ''
+            if (Bool1 === "True") {
+                valor1 = true
+            }
+            else {
+                valor1 = false
+            }
+            const Bool2 = document.getElementById('Bool2').value
+            let valor2 = ''
+            if (Bool2 === "True") {
+                valor2 = true
+            }
+            else {
+                valor2 = false
+            }
+            let valorResultado = ''
+            if (valor1 === valor2 || (valor1 === false && valor2 === false)) {
+                valorResultado = "Verdadeiro"
+            }
+            else {
+                valorResultado = "Falso"
+            }
+            const Resultado = document.getElementById('Resulatdo').innerText = valorResultado
+            //Esse código visa realizar uma comparação de verdadeiro ou falso como mostrado na tabela acima
+        }
+    </script>
+</body>
+
+</html>

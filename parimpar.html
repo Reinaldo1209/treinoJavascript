@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parimpar</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <input type="text" id="Numero">
+    <button type="submit" onclick="CalcParImpar()">Verificar</button>
+    <p>Seu numero é: <span id="Comparacao"></span> e <span id="PosNeg"></span></p>
+    <script>
+        //Esse codigo visa verificar se seu numero e negativo ou positivo, e se é par ou impar
+        function CalcParImpar(){
+            const Numero = parseInt(document.getElementById('Numero').value, 10);
+            if (Numero % 2 === 0) 
+            document.getElementById('Comparacao').innerText = ('Par')
+            else document.getElementById('Comparacao').innerText = ('Impar')
+            if (Numero > 0) document.getElementById('PosNeg').innerText = ('Positivo')
+            else document.getElementById('PosNeg').innerText = ('Negativo')
+        }
+    </script>
+</body>
+</html>

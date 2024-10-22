@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Valor1">
+    <input type="text" id="Valor2">
+    <input type="text" id="Valor3">
+    <button type="submit" onclick="Ordenar()"> Ordenar</button>
+    <p id="Resultado"></p>
+
+    <script>
+        function Ordenar(){
+            const Valor1 = parseInt(document.getElementById('Valor1').value, 10)
+            const Valor2 = parseInt(document.getElementById('Valor2').value, 10)
+            const Valor3 = parseInt(document.getElementById('Valor3').value, 10)
+
+            const Valores = [Valor1, Valor2, Valor3]
+
+            Valores.sort((a, b) => a - b )
+
+            document.getElementById('Resultado').innerText = Valores.join(', ');
+            //Esse código visa ordenar 3 números pela ordem crescente
+        }
+    </script>
+</body>
+</html>

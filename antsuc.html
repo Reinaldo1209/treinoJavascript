@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Num">
+    <button type="submit" onclick="Verifica()">Verificar</button>
+    <p>O antecessor dele é <span id="ResultadoAnt"></span></p>
+    <p>O sucessor dele é <span id="ResultadoSuc"></span></p>
+    <script>
+        function Verifica(){
+            const Num = parseInt(document.getElementById('Num').value, 10)
+            document.getElementById('ResultadoSuc').innerText = (Num + 1)
+            document.getElementById('ResultadoAnt').innerText = (Num - 1)
+            //Este código visa renderizar o sucessor e o antecessor de cada número
+        }
+    </script>
+</body>
+</html>

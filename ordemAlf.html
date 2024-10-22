@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ordenar Lista Alfabeticamente</title>
+</head>
+<body>
+
+  <h2>Digite sua lista de opções (uma por linha):</h2>
+  <textarea id="listaInput" placeholder="Insira as opções aqui..."></textarea>
+  <button onclick="ordenarLista()">Ordenar e Exibir</button>
+  <h3>Opções Ordenadas:</h3>
+  <div class="resultado" id="resultado"></div>
+
+  <script>
+    //Esse codigo eu utilizo para retornar listas em ordem alfabética, fiz por uma demanda no trabalho
+    function ordenarLista() {
+      const input = document.getElementById("listaInput").value;
+      let opcoes = input.split("\n").map(item => item.trim()).filter(item => item);
+      opcoes.sort((a, b) => a.localeCompare(b));
+      const resultadoDiv = document.getElementById("resultado");
+      resultadoDiv.innerHTML = "";
+      opcoes.forEach(opcao => {
+        const pElement = document.createElement("p");
+        pElement.textContent = opcao;
+        resultadoDiv.appendChild(pElement);
+      });
+    }
+  </script>
+
+</body>
+</html>

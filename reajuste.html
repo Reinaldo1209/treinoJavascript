@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste</title>
+</head>
+<body>
+    <input type="text" id="ValorReajuste">
+    <button type="submit" onclick="Reajustar()">Reajustar</button>
+    <p>Seu valor com reajuste de 5% é de <span id="ValorReajustado"></span></p>
+
+    <script>
+        //Esse codigo visa realizar um reajuste de 5% sobre seu salário
+        function Reajustar(){
+            const ValorReajuste = Number(document.getElementById('ValorReajuste').value)
+            const ValorReajustado = ValorReajuste*0.05+ValorReajuste
+            document.getElementById('ValorReajustado').innerText = ValorReajustado.toFixed(2)
+        }
+    </script>
+</body>
+</html>

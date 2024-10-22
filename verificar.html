@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <input type="text" id="Num1">
+    <input type="text" id="Num2">
+    <input type="text" id="Num3">
+    <button type="submit" onclick="calcularValor()">A</button>
+    <p>A soma dos valores é:</p>
+    <p id="soma"></p>
+    <p>O valor dos dois primeiros números <span id="comparação"></span> é maior que o terceiro numero</p>
+
+    <script>
+        //Esse codigo visa retornar se a soma de dois valores é maior ou não que o terceiro valor
+        function calcularValor() {
+            const Numero1 = Number(document.getElementById('Num1').value);
+            const Numero2 = Number(document.getElementById('Num2').value);
+            const Numero3 = Number(document.getElementById('Num3').value);
+            const Numero1e2 = Numero1 + Numero2;
+            document.getElementById('soma').innerText = Numero1e2
+            console.log(Numero1e2) 
+            if (Numero1e2 > Numero3)
+                document.getElementById('comparação').innerText = ("sim")
+            else document.getElementById('comparação').innerText = ("não")
+        }
+    </script>
+</body>
+
+</html>

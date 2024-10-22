@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="Salario">
+    <button type="submit" onclick="CalculaSalario()">Calcular</button>
+    <p>Você recebe <span id="Resultado"></span> salários mínimos</p>
+
+    <script>
+        //Esse codigo visa mostrar quantos salários minimos você reecebe
+        function CalculaSalario(){
+            const Salario = Number(document.getElementById('Salario').value)
+            const SalarioMin = 1293.20
+            const Resultado = Salario/SalarioMin
+            document.getElementById('Resultado').innerText = Resultado.toFixed(2)
+        }
+    </script>
+</body>
+</html>

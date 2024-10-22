@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <input type="number" id="Peso" placeholder="Insira seu peso em kg" step="0.1">
+    <input type="number" id="Altura" placeholder="Insira sua altura em metros" step="0.01">
+    <button type="submit" onclick="CalcularIMC()">Calcular IMC</button>
+    <p id="Resultado"></p>
+
+    <script>
+        //Esse codigo visa calcular seu IMC e dizer sua condição
+        function CalcularIMC(){
+            const peso = parseFloat(document.getElementById('Peso').value)
+            const altura = parseFloat(document.getElementById('Altura').value)
+            const ValorIMC = peso / (altura * altura)
+            const imcCondicao = verificarCondicaoIMC(ValorIMC)
+            document.getElementById('Resultado').innerText = `Seu IMC é ${ValorIMC.toFixed(2)}. Condição: ${imcCondicao}`
+        }
+
+        function verificarCondicaoIMC(imc) {
+            if (imc < 18.5) {
+                return "Abaixo do peso";
+            } else if (imc >= 18.5 && imc <= 24.9) {
+                return "Peso ideal (parabéns)";
+            } else if (imc >= 25.0 && imc <= 29.9) {
+                return "Levemente acima do peso";
+            } else if (imc >= 30.0 && imc <= 34.9) {
+                return "Obesidade grau I";
+            } else if (imc >= 35.0 && imc <= 39.9) {
+                return "Obesidade grau II (severa)";
+            } else {
+                return "Obesidade grau III (mórbida)";
+            }
+        }
+    </script>
+</body>
+</html>
